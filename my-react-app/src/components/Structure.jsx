@@ -15,13 +15,9 @@ export default function Structure() {
     }
   };
   useEffect(() => {
-    setItems(
-      JSON.parse(
-        localStorage.getItem("groceryItems") != null
-          ? localStorage.getItem("groceryItems")
-          : {}
-      )
-    );
+    if (localStorage.getItem("groceryItems") != null) {
+      JSON.parse(localStorage.getItem("groceryItems") != null);
+    }
   }, []);
   useEffect(() => {
     if (items.length > 0) {
