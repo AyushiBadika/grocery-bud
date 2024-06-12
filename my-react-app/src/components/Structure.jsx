@@ -11,12 +11,12 @@ export default function Structure() {
         isChecked: false,
       };
       setItems((pre) => [...pre, itemObj]);
-      console.log(items);
+      inputRef.current.value = "";
     }
   };
   useEffect(() => {
     if (localStorage.getItem("groceryItems") != null) {
-      JSON.parse(localStorage.getItem("groceryItems") != null);
+      setItems(JSON.parse(localStorage.getItem("groceryItems")));
     }
   }, []);
   useEffect(() => {
