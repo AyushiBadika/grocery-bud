@@ -19,7 +19,7 @@ export default function Structure() {
       JSON.parse(
         localStorage.getItem("groceryItems") != null
           ? localStorage.getItem("groceryItems")
-          : []
+          : {}
       )
     );
   }, []);
