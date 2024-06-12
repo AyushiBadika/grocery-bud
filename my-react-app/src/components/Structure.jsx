@@ -15,7 +15,13 @@ export default function Structure() {
     }
   };
   useEffect(() => {
-    setItems(JSON.parse(localStorage.getItem("groceryItems")));
+    setItems(
+      JSON.parse(
+        localStorage.getItem("groceryItems") != null
+          ? localStorage.getItem("groceryItems")
+          : []
+      )
+    );
   }, []);
   useEffect(() => {
     if (items.length > 0) {
